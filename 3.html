@@ -4,9 +4,50 @@
     <title>WEB1 - Hase</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <script>
+        var Links = {
+            setColor : function(color){
+            var alist = document.querySelectorAll('a');
+                var i = 0;
+                while(i < alist.length){
+                    alist[i].style.color = color;
+                    i = i + 1;
+                }
+            }
+        }
+        var Body = {
+            setColor : function(color){
+           document.querySelector('body').style.color = color;
+            },
+            setBackgroundColor : function(color){
+            document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+    
+        function NachtTagHandler(self){
+            var target=document.querySelector('body');
+            if(self.value === 'Nacht'){
+                Body.setBackgroundColor('black');
+                Body.setColor('white');
+                self.value='Tag';
+
+                Links.setColor('yellow');
+            }
+            else{
+                Body.setBackgroundColor('white');
+                Body.setColor('black');
+                self.value='Nacht';
+
+                Links.setColor('blue');
+            }
+        }
+    </script>
 </head>
 <body>
     <h1><a href="index.html">WEB</a></h1>
+    <input type="button" value="Nacht" onclick="
+       NachtTagHandler(this);
+    ">
     <div id="grid">
         <ol>
             <li><a href="1.html">Hund</a></li>

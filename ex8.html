@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>객체</title>
+</head>
+<body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+        var Familie = {
+            "Hund" : "Bappul",
+            "Baer" : "Gomtaeng",
+            "Hase" : "Ttok"
+        };
+        document.write("Hund : " + Familie.Hund + "<br>");
+        document.write("Baer : " + Familie.Baer + "<br>");
+        document.write("Hase : " + Familie.Hase + "<br>");
+        Familie.Katze = "Keine";
+        document.write("Katze : " + Familie.Katze + "<br>");
+        Familie["zweite Hund"] = "Yangmal";
+        document.write("zweite Hund : " + Familie["zweite Hund"] + "<br>");
+    </script>
+    <h2>Iterate</h2>
+    <script>
+        for(var key in Familie){
+            document.write(key + ' : ' + Familie[key] + '<br>');
+        }
+    </script>
+    <h2>Property & Method</h2>
+    <script>
+        Familie.showAll = function(){
+            for(var key in this){
+            document.write(key + ' : ' + this[key] + '<br>');
+            }
+        }
+        Familie.showAll();
+    </script>
+</body>
+</html>
